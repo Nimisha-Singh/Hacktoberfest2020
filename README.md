@@ -8,6 +8,7 @@ Happy Coding!!
 - [![](https://img.shields.io/badge/D3V3sh-blue)](http://www.deveshsingh.ml) 
 - [![](https://img.shields.io/badge/Neeshu-blue)](http://www.neeshu.ml) 
 - [![](https://img.shields.io/badge/Yash_Gautam-blue)](http://www.yashgautam.me) 
+- [![](https://img.shields.io/badge/Anshul_Singh-blue)](http://www.incredible_one.me) 
 
 
 ![visitors](https://visitor-badge.laobi.icu/badge?page_id=Nimisha-Singh.Hacktoberfest2020)
