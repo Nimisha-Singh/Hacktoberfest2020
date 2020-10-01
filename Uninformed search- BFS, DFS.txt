@@ -1,0 +1,82 @@
+Program for uninformed search bfs and dfs: 
+
+#include <bits/stdc++.h>
+using namespace std;
+
+void BFS(int **graph, int n,int sv,bool* visited){
+    visited[sv]=true;
+    queue<int> nodes;
+    nodes.push(sv);
+    while(!nodes.empty()){
+        int front=nodes.front();
+        nodes.pop();
+        for(int i=0;i<n;i++){
+            if(i == front)
+            continue;
+            
+            if(graph[front][i]==1 && !visited[i]){
+                visited[i]=true;
+                nodes.push(i);
+            }
+        }
+        cout<<front<<" ";
+    }
+}
+
+void DFS(int** graph,int n,int sv,bool* visited){
+    if(visited[sv])
+    return;
+    
+    visited[sv]=true;
+    cout<<sv<<" ";
+    for(int i=0;i<n;i++){
+        if(i==sv)
+        continue;
+        
+        if(graph[sv][i]==1 && !visited[i]){
+            DFS(graph,n,i,visited);
+        }
+    }
+}
+void printGraph(int** graph,int n,bool mode){
+    bool *visited=new bool[n];
+    for(int i=0;i<n;i++){
+        visited[i]=false;
+    }
+    if(mode==1){
+        for(int i=0;i<n;i++){
+            if(!visited[i])
+            BFS(graph,n,i,visited);
+        }
+    }else{
+        for(int i=0;i<n;i++){
+            if(!visited[i])
+            DFS(graph,n,i,visited);
+        }
+    }
+}
+int main() {
+	// your code goes here
+	int v,e;
+	cin>>v>>e;
+	int** graph = new int*[v];
+	for(int i=0;i<v;i++){
+	    graph[i]=new int[v];
+	    for(int j=0;j<v;j++){
+	        graph[i][j]=0;
+	    }
+	}
+	for(int i=0;i<e;i++){
+	    int fi,si;
+	    cin>>fi>>si;
+	    graph[si][fi]=1;
+	    graph[fi][si]=1;
+	}
+	cout<<"Breadth first searh on undirected graph: ";
+	printGraph(graph,v,true);
+	cout<<"\n\n";
+	cout<<"Depth first seach on undirected graph: ";
+	printGraph(graph,v,0);
+	
+	return 0;
+}
