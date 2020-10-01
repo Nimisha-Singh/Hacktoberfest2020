@@ -1,0 +1,23 @@
+Void 1DTTT(){
+	int grid[9]; 	// This is sequential but we can use random function to take random cells
+
+	Bool pc=true,human=false;
+	for(int i=0;i<9;i++){			
+if(human){
+			grid[i]=”1”;
+pc=true;
+continue;
+}else{
+grid[i]=”0”;
+human=true;
+continue;
+}
+}
+
+for(int i=0;i<9;i++){
+if(i!=0 && i%3==0){
+cout<<”\n”;
+}
+cout<<grid[i]<<” “;
+}
+} 
